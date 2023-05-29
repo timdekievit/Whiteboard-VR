@@ -4,6 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 0
+    path: Assets/Whiteboard/Scenes/SampleScene.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Draw-Note-Hololens-2/DrawNote/Scenes/MainScene.unity
+    guid: 6ef69b5686de0b3468cf3560b229335d
   m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: b74b6985f2fc83847ad49851cd6ea29d, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 8df5ef8543ec8094a8f3083fce23b652, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 26cfe87228839284bac7a84426954418, type: 2}
