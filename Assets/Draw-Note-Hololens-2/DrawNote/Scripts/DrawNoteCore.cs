@@ -122,7 +122,7 @@ public class DrawNoteCore : MonoBehaviour
             {
                 foundDrawPositon = true;
                 drawPosition = pose.Position;
-            }
+            }     
         }
         else
         {
