@@ -36,12 +36,17 @@ public class DrawNoteCore : MonoBehaviour
 
     private MixedRealityPose pose;
 
-
     public Material drawMaterial;
     public Color[] colorSwatches = new Color[4];
     public Color drawColor = Color.white;
 
     public SmallDrawingHUD instanceSmallDrawingHUD;
+
+    public string Name => throw new NotImplementedException();
+
+    public uint Priority => throw new NotImplementedException();
+
+    public BaseMixedRealityProfile ConfigurationProfile => throw new NotImplementedException();
 
     private void Start()
     {
@@ -68,6 +73,7 @@ public class DrawNoteCore : MonoBehaviour
     }
     void Update()
     {
+
         // update transform here intead of parenting gameobject to the camera which MRT gives error
         if (CameraCache.Main != null)
         {
@@ -122,7 +128,17 @@ public class DrawNoteCore : MonoBehaviour
             {
                 foundDrawPositon = true;
                 drawPosition = pose.Position;
-            }     
+            }
+
+            // if drawing with controller find the object
+            
+            
+            // else if ()
+            // {
+            //     foundDrawPositon = true;
+            //     drawPosition = pose.Position;
+            // }
+            
         }
         else
         {
