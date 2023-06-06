@@ -54,32 +54,32 @@ public class ButtonExample : MonoBehaviour
     void Update()
     {
         foreach (IMixedRealityController controller in CoreServices.InputSystem.DetectedControllers)
-{
-    // Interactions for a controller is the list of inputs that this controller exposes
-    foreach (MixedRealityInteractionMapping interactionMapping in controller.Interactions)
-    {
-        // // 6DOF controllers support the "SpatialPointer" type (pointing direction)
-        // // or "GripPointer" type (direction of the 6DOF controller)
-        // if (interactionMapping.InputType == DeviceInputType.SpatialPointer)
-        // {
-        //     Debug.Log("Spatial pointer PositionData: " + interactionMapping.PositionData);
-        //     Debug.Log("Spatial pointer RotationData: " + interactionMapping.RotationData);
-        // }
-
-        // if (interactionMapping.InputType == DeviceInputType.SpatialGrip)
-        // {
-        //     Debug.Log("Spatial grip PositionData: " + interactionMapping.PositionData);
-        //     Debug.Log("Spatial grip RotationData: " + interactionMapping.RotationData);
-        // }
-
-        if (interactionMapping.InputType == DeviceInputType.Select)
         {
-            Debug.Log("Select PositionData: " + interactionMapping.PositionData);
-            Debug.Log("Select RotationData: " + interactionMapping.RotationData);
+            // Interactions for a controller is the list of inputs that this controller exposes
+            foreach (MixedRealityInteractionMapping interactionMapping in controller.Interactions)
+            {
+                // // 6DOF controllers support the "SpatialPointer" type (pointing direction)
+                // // or "GripPointer" type (direction of the 6DOF controller)
+                // if (interactionMapping.InputType == DeviceInputType.SpatialPointer)
+                // {
+                //     Debug.Log("Spatial pointer PositionData: " + interactionMapping.PositionData);
+                //     Debug.Log("Spatial pointer RotationData: " + interactionMapping.RotationData);
+                // }
+
+                // if (interactionMapping.InputType == DeviceInputType.SpatialGrip)
+                // {
+                //     Debug.Log("Spatial grip PositionData: " + interactionMapping.PositionData);
+                //     Debug.Log("Spatial grip RotationData: " + interactionMapping.RotationData);
+                // }
+
+                if (interactionMapping.InputType == DeviceInputType.Select)
+                {
+                    Debug.Log("Select PositionData: " + interactionMapping.PositionData);
+                    Debug.Log("Select RotationData: " + interactionMapping.RotationData);
+                }
+
+
+            }
         }
-
-
-    }
-}
     }
 }

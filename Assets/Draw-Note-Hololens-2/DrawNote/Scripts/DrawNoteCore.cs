@@ -5,8 +5,31 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DrawNoteCore : MonoBehaviour
+public class DrawNoteCore : MonoBehaviour, IMixedRealityInputHandler, IMixedRealityInputActionHandler
 {
+
+    // The input action that corresponds to the back trigger
+    public MixedRealityInputAction triggerAction;
+
+    // A flag to indicate if the trigger is pressed
+    private bool triggerPressed = false;
+
+    private Vector3 controllerpos;
+
+    // Register for input events
+    private void OnEnable()
+    {
+        CoreServices.InputSystem?.RegisterHandler<IMixedRealityInputHandler>(this);
+        CoreServices.InputSystem?.RegisterHandler<IMixedRealityInputActionHandler>(this);
+    }
+
+    // Unregister from input events
+    private void OnDisable()
+    {
+        CoreServices.InputSystem?.UnregisterHandler<IMixedRealityInputHandler>(this);
+        CoreServices.InputSystem?.UnregisterHandler<IMixedRealityInputActionHandler>(this);
+    }
+
     public bool drawing = true;
 
     // draw targets (create one new draw target while drawing, or for color switch)
@@ -74,6 +97,8 @@ public class DrawNoteCore : MonoBehaviour
     void Update()
     {
 
+        CheckControllerPosition();
+
         // update transform here intead of parenting gameobject to the camera which MRT gives error
         if (CameraCache.Main != null)
         {
@@ -113,10 +138,10 @@ public class DrawNoteCore : MonoBehaviour
     private void TryDrawNote(DrawNoteType instanceType)
     {
         // confirm any wrist is detected to draw
-        if (HandJointUtils.TryGetJointPose(TrackedHandJoint.Wrist, Handedness.Any, out pose) == false)
-        {
-            return;
-        }
+        //if (HandJointUtils.TryGetJointPose(TrackedHandJoint.Wrist, Handedness.Any, out pose) == false)
+        //{
+        //    return;
+        //}
 
         bool foundDrawPositon = false;
         Vector3 drawPosition = Vector3.zero;
@@ -124,20 +149,21 @@ public class DrawNoteCore : MonoBehaviour
         // if drawing from finger just find the object
         if (curMode == DrawNoteType.Finger)
         {
-            if (HandJointUtils.TryGetJointPose(TrackedHandJoint.IndexTip, Handedness.Any, out pose))
-            {
-                foundDrawPositon = true;
-                drawPosition = pose.Position;
-            }
+            //if (HandJointUtils.TryGetJointPose(TrackedHandJoint.IndexTip, Handedness.Any, out pose))
+            //{
+            //    foundDrawPositon = true;
+            //    drawPosition = pose.Position;
+           // }
 
             // if drawing with controller find the object
             
             
-            // else if ()
-            // {
-            //     foundDrawPositon = true;
-            //     drawPosition = pose.Position;
-            // }
+            if (triggerPressed)
+            {
+                Debug.Log("controller drawing");
+                foundDrawPositon = true;
+                drawPosition = controllerpos;
+            }
             
         }
         else
@@ -260,5 +286,77 @@ public class DrawNoteCore : MonoBehaviour
             curMode = 0;
         }
         instanceSmallDrawingHUD.SetModeText(curMode.ToString());
+    }
+
+    public void OnInputUp(InputEventData eventData)
+    {
+        // Check if the event data matches the trigger action
+        if (eventData.MixedRealityInputAction == triggerAction)
+        {
+            // Set the flag to false
+            triggerPressed = false;
+            Debug.Log("Trigger released");
+        }
+    }
+
+    public void OnInputDown(InputEventData eventData)
+    {
+        // Check if the event data matches the trigger action
+        if (eventData.MixedRealityInputAction == triggerAction)
+        {
+            // Set the flag to true
+            triggerPressed = true;
+            Debug.Log("Trigger pressed");
+        }
+    }
+
+    // Implement IMixedRealityInputActionHandler
+    public void OnActionStarted(BaseInputEventData eventData)
+    {
+        // Check if the event data matches the trigger action
+        if (eventData.MixedRealityInputAction == triggerAction)
+        {
+            // Do something when the action starts
+            Debug.Log("Trigger action started");
+        }
+    }
+
+    public void OnActionEnded(BaseInputEventData eventData)
+    {
+        // Check if the event data matches the trigger action
+        if (eventData.MixedRealityInputAction == triggerAction)
+        {
+            // Do something when the action ends
+            Debug.Log("Trigger action ended");
+        }
+    }
+
+    private void CheckControllerPosition()
+    {
+        foreach (IMixedRealityController controller in CoreServices.InputSystem.DetectedControllers)
+        {
+            // Interactions for a controller is the list of inputs that this controller exposes
+            foreach (MixedRealityInteractionMapping interactionMapping in controller.Interactions)
+            {
+                // // 6DOF controllers support the "SpatialPointer" type (pointing direction)
+                // // or "GripPointer" type (direction of the 6DOF controller)
+                if (interactionMapping.InputType == DeviceInputType.SpatialPointer)
+                {
+                    Debug.Log("Spatial pointer PositionData: " + interactionMapping.PositionData);
+                    Debug.Log("Spatial pointer RotationData: " + interactionMapping.RotationData);
+
+                    //controllerpos = interactionMapping.PositionData;
+                }
+
+                if (interactionMapping.InputType == DeviceInputType.SpatialGrip)
+                {
+                    Debug.Log("Spatial grip PositionData: " + interactionMapping.PositionData);
+                    Debug.Log("Spatial grip RotationData: " + interactionMapping.RotationData);
+
+                    controllerpos = interactionMapping.PositionData;
+                }
+
+            }
+        }
     }
 }
