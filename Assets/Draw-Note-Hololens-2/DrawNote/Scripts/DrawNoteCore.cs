@@ -15,6 +15,12 @@ public class DrawNoteCore : MonoBehaviour, IMixedRealityInputHandler, IMixedReal
     private bool triggerPressed = false;
 
     private Vector3 controllerpos;
+    Vector3 ControllerPosmodification = new Vector3(0.05f, 0.05f, 0f);
+    Quaternion initialRotation = Quaternion.identity;
+    private Quaternion controllerRot;
+    public Vector3 offset = new Vector3(0, 0.05f, 0.05f);
+    public Transform controllerTransform;
+    private GameObject attachedGameObject;
 
     // Register for input events
     private void OnEnable()
@@ -57,6 +63,8 @@ public class DrawNoteCore : MonoBehaviour, IMixedRealityInputHandler, IMixedReal
     /// </summary>
     public DrawNoteType curMode;
 
+    public DrawNoteType controllerMode = DrawNoteType.Finger;
+
     private MixedRealityPose pose;
 
     public Material drawMaterial;
@@ -96,7 +104,6 @@ public class DrawNoteCore : MonoBehaviour, IMixedRealityInputHandler, IMixedReal
     }
     void Update()
     {
-
         CheckControllerPosition();
 
         // update transform here intead of parenting gameobject to the camera which MRT gives error
@@ -119,10 +126,16 @@ public class DrawNoteCore : MonoBehaviour, IMixedRealityInputHandler, IMixedReal
             drawPlane.enabled = showDrawPlane;
         }
 
-        if (drawing)
+        if (triggerPressed)
         {
+            curMode = DrawNoteType.Finger;
             TryDrawNote(curMode);
         }
+
+        //if (drawing)
+        //{
+        //    TryDrawNote(curMode);
+        //}
         else
         {
             if (drawPlane.enabled)
@@ -137,7 +150,7 @@ public class DrawNoteCore : MonoBehaviour, IMixedRealityInputHandler, IMixedReal
     /// <param name="instanceType"></param>
     private void TryDrawNote(DrawNoteType instanceType)
     {
-        // confirm any wrist is detected to draw
+        //confirm any wrist is detected to draw
         //if (HandJointUtils.TryGetJointPose(TrackedHandJoint.Wrist, Handedness.Any, out pose) == false)
         //{
         //    return;
@@ -158,13 +171,13 @@ public class DrawNoteCore : MonoBehaviour, IMixedRealityInputHandler, IMixedReal
             // if drawing with controller find the object
             
             
-            if (triggerPressed)
-            {
+
                 Debug.Log("controller drawing");
                 foundDrawPositon = true;
                 drawPosition = controllerpos;
-            }
-            
+
+
+
         }
         else
         {
@@ -290,22 +303,31 @@ public class DrawNoteCore : MonoBehaviour, IMixedRealityInputHandler, IMixedReal
 
     public void OnInputUp(InputEventData eventData)
     {
+
+        Debug.Log(eventData.MixedRealityInputAction.Description);
+        Debug.Log(eventData.MixedRealityInputAction.Id);
         // Check if the event data matches the trigger action
-        if (eventData.MixedRealityInputAction == triggerAction)
+        if (eventData.MixedRealityInputAction.Id == 1)
         {
             // Set the flag to false
             triggerPressed = false;
+            drawing = false;
+            curDrawIndex += 1;
             Debug.Log("Trigger released");
         }
     }
 
     public void OnInputDown(InputEventData eventData)
     {
+        Debug.Log(eventData.MixedRealityInputAction.Description);
+        Debug.Log(eventData.MixedRealityInputAction.Id);
+
         // Check if the event data matches the trigger action
-        if (eventData.MixedRealityInputAction == triggerAction)
+        if (eventData.MixedRealityInputAction.Id == 1)
         {
             // Set the flag to true
             triggerPressed = true;
+            drawing = true;
             Debug.Log("Trigger pressed");
         }
     }
@@ -342,18 +364,46 @@ public class DrawNoteCore : MonoBehaviour, IMixedRealityInputHandler, IMixedReal
                 // // or "GripPointer" type (direction of the 6DOF controller)
                 if (interactionMapping.InputType == DeviceInputType.SpatialPointer)
                 {
-                    Debug.Log("Spatial pointer PositionData: " + interactionMapping.PositionData);
-                    Debug.Log("Spatial pointer RotationData: " + interactionMapping.RotationData);
+                    //Debug.Log("Spatial pointer PositionData: " + interactionMapping.PositionData);
+                    //Debug.Log("Spatial pointer RotationData: " + interactionMapping.RotationData);
 
                     //controllerpos = interactionMapping.PositionData;
                 }
 
                 if (interactionMapping.InputType == DeviceInputType.SpatialGrip)
                 {
-                    Debug.Log("Spatial grip PositionData: " + interactionMapping.PositionData);
-                    Debug.Log("Spatial grip RotationData: " + interactionMapping.RotationData);
+                    //Debug.Log("Spatial grip PositionData: " + interactionMapping.PositionData);
+                    //Debug.Log("Spatial grip RotationData: " + interactionMapping.RotationData);
 
-                    controllerpos = interactionMapping.PositionData;
+
+                    //if (initialRotation == Quaternion.identity)
+                    //{
+                    //    initialRotation = interactionMapping.RotationData;
+                    //}
+
+                    //if (attachedGameObject == null)
+                    //{
+                    //    attachedGameObject = new GameObject("AttachedObject");
+                    //    // Attach the new game object to the controller
+                    //    attachedGameObject.transform.SetParent(controllerTransform, false);
+                    //}
+
+                    controllerpos = interactionMapping.PositionData + offset;
+                    controllerRot = interactionMapping.RotationData;
+
+                    //controllerTransform.position = controllerpos;
+                    //controllerTransform.rotation = controllerRot;
+
+                    //attachedGameObject.transform.position = controllerTransform.position + offset;
+                    //attachedGameObject.transform.rotation = controllerTransform.rotation;
+
+                    //Quaternion relativeRotation = Quaternion.Inverse(initialRotation) * interactionMapping.RotationData;
+
+                    //ControllerPosmodification = relativeRotation * ControllerPosmodification;
+
+                    //ControllerPosmodification = interactionMapping.RotationData * ControllerPosmodification;
+
+
                 }
 
             }
