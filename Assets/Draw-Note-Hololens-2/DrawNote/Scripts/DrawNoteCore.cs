@@ -295,23 +295,9 @@ public class DrawNoteCore : MonoBehaviour, IMixedRealityInputHandler
             {
                 // // 6DOF controllers support the "SpatialPointer" type (pointing direction)
                 // // or "GripPointer" type (direction of the 6DOF controller)
-                // if (interactionMapping.InputType == DeviceInputType.SpatialPointer)
-                // {
-                //     //Debug.Log("Spatial pointer PositionData: " + interactionMapping.PositionData);
-                //     //Debug.Log("Spatial pointer RotationData: " + interactionMapping.RotationData);
-
-                //     //controllerpos = interactionMapping.PositionData;
-                // }
-
-                if (interactionMapping.InputType == DeviceInputType.SpatialGrip)
+                if (interactionMapping.InputType == DeviceInputType.SpatialPointer)
                 {
-                    //Debug.Log("Spatial grip PositionData: " + interactionMapping.PositionData);
-                    //Debug.Log("Spatial grip RotationData: " + interactionMapping.RotationData);
-
-                    controllerpos = interactionMapping.PositionData + offset;
-                    // controllerpos = interactionMapping.PositionData;
-
-                    controllerRot = interactionMapping.RotationData;
+                    controllerpos = interactionMapping.PositionData;
                 }
 
             }

@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Draw-Note-Hololens-2/DrawNote/Scenes/MainScene.unity
     guid: 6ef69b5686de0b3468cf3560b229335d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Samples/Mixed Reality Toolkit Examples/2.8.3/Experimental - ExamplesHub/Scenes/MRTKExamplesHubMainMenu.unity
     guid: 63a00118e809c754f9c7911bb85d635f
   m_configObjects:
