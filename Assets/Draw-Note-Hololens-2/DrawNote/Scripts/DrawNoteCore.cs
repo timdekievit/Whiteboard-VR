@@ -88,7 +88,7 @@ public class DrawNoteCore : MonoBehaviour, IMixedRealityInputHandler
         /// <summary>
         /// Draw only on draw plane with hand
         /// </summary>
-        Normal,
+        Distant,
         /// <summary>
         /// Draw only on meshes with hand
         /// </summary>
@@ -101,38 +101,7 @@ public class DrawNoteCore : MonoBehaviour, IMixedRealityInputHandler
     void Update()
     {
         CheckControllerPosition();
-
-        // update transform here intead of parenting gameobject to the camera which MRT gives error
-        if (CameraCache.Main != null)
-        {
-            transform.position = CameraCache.Main.transform.position;
-            transform.rotation = CameraCache.Main.transform.rotation;
-        }
-
-        instanceSmallDrawingHUD.SetVisibility(drawing);
-
-        // show draw plane
-        bool showDrawPlane = false;
-        if (drawing && curMode == DrawNoteType.Normal)
-        {
-            showDrawPlane = true;
-        }
-        if (drawPlane.enabled != showDrawPlane)
-        {
-            drawPlane.enabled = showDrawPlane;
-        }
-
-        if (drawing)
-        {
-           TryDrawNote(curMode);
-        }
-        else
-        {
-            if (drawPlane.enabled)
-            {
-                drawPlane.enabled = false;
-            }
-        }
+        HandleDrawing();
     }
     /// <summary>
     /// Try to Draw a Note provided The User's MRTK2 Hand pointer's are hitting the objective hit location for the DrawNoteType specified
@@ -187,7 +156,7 @@ public class DrawNoteCore : MonoBehaviour, IMixedRealityInputHandler
                             if (hitObject)
                             {
                                 // settings for draw note type
-                                if (instanceType == DrawNoteType.Normal)
+                                if (instanceType == DrawNoteType.Distant)
                                 {
                                     if (hitObject.transform.name != "DrawPlane")
                                     {
@@ -343,6 +312,41 @@ public class DrawNoteCore : MonoBehaviour, IMixedRealityInputHandler
                     controllerRot = interactionMapping.RotationData;
                 }
 
+            }
+        }
+    }
+
+    private void HandleDrawing()
+    {
+        // update transform here intead of parenting gameobject to the camera which MRT gives error
+        if (CameraCache.Main != null)
+        {
+            transform.position = CameraCache.Main.transform.position;
+            transform.rotation = CameraCache.Main.transform.rotation;
+        }
+
+        instanceSmallDrawingHUD.SetVisibility(drawing);
+
+        // show draw plane
+        bool showDrawPlane = false;
+        if (drawing && curMode == DrawNoteType.Distant)
+        {
+            showDrawPlane = true;
+        }
+        if (drawPlane.enabled != showDrawPlane)
+        {
+            drawPlane.enabled = showDrawPlane;
+        }
+
+        if (drawing)
+        {
+           TryDrawNote(curMode);
+        }
+        else
+        {
+            if (drawPlane.enabled)
+            {
+                drawPlane.enabled = false;
             }
         }
     }
