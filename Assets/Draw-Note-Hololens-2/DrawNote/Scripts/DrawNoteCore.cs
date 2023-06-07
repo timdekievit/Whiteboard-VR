@@ -13,10 +13,11 @@ public class DrawNoteCore : MonoBehaviour, IMixedRealityInputHandler
 
     // A flag to indicate if the trigger is pressed
     private bool triggerPressed = false;
-
     private Vector3 controllerpos;
     private Quaternion controllerRot;
-    public Vector3 offset = new Vector3(0, 0.05f, 0.05f);
+    public Vector3 offset = new Vector3(0, 0, 0.05f);
+    // public Vector3 offset = new Vector3(0, 0, 0);
+
 
     // Register for input events
     private void OnEnable()
@@ -258,7 +259,6 @@ public class DrawNoteCore : MonoBehaviour, IMixedRealityInputHandler
 
     public void OnInputUp(InputEventData eventData)
     {
-
         Debug.Log(eventData.MixedRealityInputAction.Description);
         Debug.Log(eventData.MixedRealityInputAction.Id);
         // Check if the event data matches the trigger action
@@ -309,6 +309,8 @@ public class DrawNoteCore : MonoBehaviour, IMixedRealityInputHandler
                     //Debug.Log("Spatial grip RotationData: " + interactionMapping.RotationData);
 
                     controllerpos = interactionMapping.PositionData + offset;
+                    // controllerpos = interactionMapping.PositionData;
+
                     controllerRot = interactionMapping.RotationData;
                 }
 
