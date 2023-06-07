@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DrawNoteCore : MonoBehaviour, IMixedRealityInputHandler, IMixedRealityInputActionHandler
+public class DrawNoteCore : MonoBehaviour, IMixedRealityInputHandler
 {
 
     // The input action that corresponds to the back trigger
@@ -15,12 +15,8 @@ public class DrawNoteCore : MonoBehaviour, IMixedRealityInputHandler, IMixedReal
     private bool triggerPressed = false;
 
     private Vector3 controllerpos;
-    Vector3 ControllerPosmodification = new Vector3(0.05f, 0.05f, 0f);
-    Quaternion initialRotation = Quaternion.identity;
     private Quaternion controllerRot;
     public Vector3 offset = new Vector3(0, 0.05f, 0.05f);
-    public Transform controllerTransform;
-    private GameObject attachedGameObject;
 
     // Register for input events
     private void OnEnable()
@@ -63,7 +59,7 @@ public class DrawNoteCore : MonoBehaviour, IMixedRealityInputHandler, IMixedReal
     /// </summary>
     public DrawNoteType curMode;
 
-    public DrawNoteType controllerMode = DrawNoteType.Finger;
+    public DrawNoteType controllerMode = DrawNoteType.Closeby;
 
     private MixedRealityPose pose;
 
@@ -98,9 +94,9 @@ public class DrawNoteCore : MonoBehaviour, IMixedRealityInputHandler, IMixedReal
         /// </summary>
         Mesh,
         /// <summary>
-        /// Draw from your finger
+        /// Draw directly from your Finger or controller
         /// </summary>
-        Finger
+        Closeby,
     }
     void Update()
     {
@@ -126,16 +122,10 @@ public class DrawNoteCore : MonoBehaviour, IMixedRealityInputHandler, IMixedReal
             drawPlane.enabled = showDrawPlane;
         }
 
-        if (triggerPressed)
+        if (drawing)
         {
-            curMode = DrawNoteType.Finger;
-            TryDrawNote(curMode);
+           TryDrawNote(curMode);
         }
-
-        //if (drawing)
-        //{
-        //    TryDrawNote(curMode);
-        //}
         else
         {
             if (drawPlane.enabled)
@@ -160,31 +150,27 @@ public class DrawNoteCore : MonoBehaviour, IMixedRealityInputHandler, IMixedReal
         Vector3 drawPosition = Vector3.zero;
 
         // if drawing from finger just find the object
-        if (curMode == DrawNoteType.Finger)
+        if (curMode == DrawNoteType.Closeby)
         {
-            //if (HandJointUtils.TryGetJointPose(TrackedHandJoint.IndexTip, Handedness.Any, out pose))
-            //{
-            //    foundDrawPositon = true;
-            //    drawPosition = pose.Position;
-           // }
+            if (HandJointUtils.TryGetJointPose(TrackedHandJoint.IndexTip, Handedness.Any, out pose))
+            {
+               foundDrawPositon = true;
+               drawPosition = pose.Position;
+           }
 
-            // if drawing with controller find the object
-            
-            
-
+            // if drawing with controller find the controller position
+            if (triggerPressed) {
                 Debug.Log("controller drawing");
                 foundDrawPositon = true;
                 drawPosition = controllerpos;
-
-
-
+            }
         }
         else
         {
             // foreach loop below adapted from Julia Schwarz stack overflow
             foreach (var source in CoreServices.InputSystem.DetectedInputSources)
             {
-                if (source.SourceType == InputSourceType.Hand)
+                if (source.SourceType == InputSourceType.Hand || (source.SourceType == InputSourceType.Controller && triggerPressed))
                 {
                     foreach (var p in source.Pointers)
                     {
@@ -311,8 +297,9 @@ public class DrawNoteCore : MonoBehaviour, IMixedRealityInputHandler, IMixedReal
         {
             // Set the flag to false
             triggerPressed = false;
-            drawing = false;
-            curDrawIndex += 1;
+            if (drawing) {
+                curDrawIndex += 1;
+            }
             Debug.Log("Trigger released");
         }
     }
@@ -325,31 +312,8 @@ public class DrawNoteCore : MonoBehaviour, IMixedRealityInputHandler, IMixedReal
         // Check if the event data matches the trigger action
         if (eventData.MixedRealityInputAction.Id == 1)
         {
-            // Set the flag to true
             triggerPressed = true;
-            drawing = true;
             Debug.Log("Trigger pressed");
-        }
-    }
-
-    // Implement IMixedRealityInputActionHandler
-    public void OnActionStarted(BaseInputEventData eventData)
-    {
-        // Check if the event data matches the trigger action
-        if (eventData.MixedRealityInputAction == triggerAction)
-        {
-            // Do something when the action starts
-            Debug.Log("Trigger action started");
-        }
-    }
-
-    public void OnActionEnded(BaseInputEventData eventData)
-    {
-        // Check if the event data matches the trigger action
-        if (eventData.MixedRealityInputAction == triggerAction)
-        {
-            // Do something when the action ends
-            Debug.Log("Trigger action ended");
         }
     }
 
@@ -362,48 +326,21 @@ public class DrawNoteCore : MonoBehaviour, IMixedRealityInputHandler, IMixedReal
             {
                 // // 6DOF controllers support the "SpatialPointer" type (pointing direction)
                 // // or "GripPointer" type (direction of the 6DOF controller)
-                if (interactionMapping.InputType == DeviceInputType.SpatialPointer)
-                {
-                    //Debug.Log("Spatial pointer PositionData: " + interactionMapping.PositionData);
-                    //Debug.Log("Spatial pointer RotationData: " + interactionMapping.RotationData);
+                // if (interactionMapping.InputType == DeviceInputType.SpatialPointer)
+                // {
+                //     //Debug.Log("Spatial pointer PositionData: " + interactionMapping.PositionData);
+                //     //Debug.Log("Spatial pointer RotationData: " + interactionMapping.RotationData);
 
-                    //controllerpos = interactionMapping.PositionData;
-                }
+                //     //controllerpos = interactionMapping.PositionData;
+                // }
 
                 if (interactionMapping.InputType == DeviceInputType.SpatialGrip)
                 {
                     //Debug.Log("Spatial grip PositionData: " + interactionMapping.PositionData);
                     //Debug.Log("Spatial grip RotationData: " + interactionMapping.RotationData);
 
-
-                    //if (initialRotation == Quaternion.identity)
-                    //{
-                    //    initialRotation = interactionMapping.RotationData;
-                    //}
-
-                    //if (attachedGameObject == null)
-                    //{
-                    //    attachedGameObject = new GameObject("AttachedObject");
-                    //    // Attach the new game object to the controller
-                    //    attachedGameObject.transform.SetParent(controllerTransform, false);
-                    //}
-
                     controllerpos = interactionMapping.PositionData + offset;
                     controllerRot = interactionMapping.RotationData;
-
-                    //controllerTransform.position = controllerpos;
-                    //controllerTransform.rotation = controllerRot;
-
-                    //attachedGameObject.transform.position = controllerTransform.position + offset;
-                    //attachedGameObject.transform.rotation = controllerTransform.rotation;
-
-                    //Quaternion relativeRotation = Quaternion.Inverse(initialRotation) * interactionMapping.RotationData;
-
-                    //ControllerPosmodification = relativeRotation * ControllerPosmodification;
-
-                    //ControllerPosmodification = interactionMapping.RotationData * ControllerPosmodification;
-
-
                 }
 
             }
