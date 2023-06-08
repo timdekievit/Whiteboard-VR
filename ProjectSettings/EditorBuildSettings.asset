@@ -8,12 +8,15 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Whiteboard/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
+  - enabled: 0
     path: Assets/Draw-Note-Hololens-2/DrawNote/Scenes/MainScene.unity
     guid: 6ef69b5686de0b3468cf3560b229335d
   - enabled: 0
-    path: Assets/Samples/Mixed Reality Toolkit Examples/2.8.3/Experimental - ExamplesHub/Scenes/MRTKExamplesHubMainMenu.unity
-    guid: 63a00118e809c754f9c7911bb85d635f
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Multiplayer/Scenes/MutiplayerDemo.unity
+    guid: b024076a97bf1324193f42f5c3ba9b3c
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: b74b6985f2fc83847ad49851cd6ea29d, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 8df5ef8543ec8094a8f3083fce23b652, type: 2}
