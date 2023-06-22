@@ -1,0 +1,342 @@
+﻿#include "pch-cpp.hpp"
+
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
+
+
+
+
+// System.Void
+struct Void_t4861ACF8F4594C3437BB48B6E56783494B843915;
+
+struct OutputConfig_tF9F7BD2788E96B649291FE4F3B30A754CD426641_marshaled_pinvoke;
+struct RenderConfig_tEB749A28C75A5B25816D712FBCA1DF82E29F869A;
+struct SetupDeviceConfig_t72B4F51A3027A54D5F9D06F5702598E5747C7209;
+struct SetupDeviceInfo_t613AFB288288EC62007E0D1A11FB12757DA6C908;
+struct unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902;
+struct unitytls_key_ref_t6BD91D013DF11047C53738FEEB12CE290FDC71A2;
+struct unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE;
+struct unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17;
+struct unitytls_x509name_t8A1108C917795D8FE946B50769ACE51489C7BF5D;
+
+
+IL2CPP_EXTERN_C_BEGIN
+IL2CPP_EXTERN_C_END
+
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// System.ValueType
+struct ValueType_t6D9B272BD21782F0A9A14F2E41F85A50E97A986F  : public RuntimeObject
+{
+};
+// Native definition for P/Invoke marshalling of System.ValueType
+struct ValueType_t6D9B272BD21782F0A9A14F2E41F85A50E97A986F_marshaled_pinvoke
+{
+};
+// Native definition for COM marshalling of System.ValueType
+struct ValueType_t6D9B272BD21782F0A9A14F2E41F85A50E97A986F_marshaled_com
+{
+};
+
+// System.IntPtr
+struct IntPtr_t 
+{
+	// System.Void* System.IntPtr::m_value
+	void* ___m_value_0;
+};
+
+// UnityEngine.RectInt
+struct RectInt_t1744D10E1063135DA9D574F95205B98DAC600CB8 
+{
+	// System.Int32 UnityEngine.RectInt::m_XMin
+	int32_t ___m_XMin_0;
+	// System.Int32 UnityEngine.RectInt::m_YMin
+	int32_t ___m_YMin_1;
+	// System.Int32 UnityEngine.RectInt::m_Width
+	int32_t ___m_Width_2;
+	// System.Int32 UnityEngine.RectInt::m_Height
+	int32_t ___m_Height_3;
+};
+
+// Microsoft.MixedReality.OpenXR.Remoting.SecureRemotingCertificateValidationResult
+#pragma pack(push, tp, 8)
+struct SecureRemotingCertificateValidationResult_tDA0C18B9901F63FBF431595385903B5FB06F7736 
+{
+	// System.Boolean Microsoft.MixedReality.OpenXR.Remoting.SecureRemotingCertificateValidationResult::TrustedRoot
+	bool ___TrustedRoot_0;
+	// System.Boolean Microsoft.MixedReality.OpenXR.Remoting.SecureRemotingCertificateValidationResult::Revoked
+	bool ___Revoked_1;
+	// System.Boolean Microsoft.MixedReality.OpenXR.Remoting.SecureRemotingCertificateValidationResult::Expired
+	bool ___Expired_2;
+	// System.Boolean Microsoft.MixedReality.OpenXR.Remoting.SecureRemotingCertificateValidationResult::WrongUsage
+	bool ___WrongUsage_3;
+	// System.Boolean Microsoft.MixedReality.OpenXR.Remoting.SecureRemotingCertificateValidationResult::RevocationCheckFailed
+	bool ___RevocationCheckFailed_4;
+	// System.Boolean Microsoft.MixedReality.OpenXR.Remoting.SecureRemotingCertificateValidationResult::InvalidCertOrChain
+	bool ___InvalidCertOrChain_5;
+	// Microsoft.MixedReality.OpenXR.Remoting.SecureRemotingNameValidationResult Microsoft.MixedReality.OpenXR.Remoting.SecureRemotingCertificateValidationResult::NameValidationResult
+	int32_t ___NameValidationResult_6;
+};
+#pragma pack(pop, tp)
+// Native definition for P/Invoke marshalling of Microsoft.MixedReality.OpenXR.Remoting.SecureRemotingCertificateValidationResult
+#pragma pack(push, tp, 8)
+struct SecureRemotingCertificateValidationResult_tDA0C18B9901F63FBF431595385903B5FB06F7736_marshaled_pinvoke
+{
+	int32_t ___TrustedRoot_0;
+	int32_t ___Revoked_1;
+	int32_t ___Expired_2;
+	int32_t ___WrongUsage_3;
+	int32_t ___RevocationCheckFailed_4;
+	int32_t ___InvalidCertOrChain_5;
+	int32_t ___NameValidationResult_6;
+};
+#pragma pack(pop, tp)
+// Native definition for COM marshalling of Microsoft.MixedReality.OpenXR.Remoting.SecureRemotingCertificateValidationResult
+#pragma pack(push, tp, 8)
+struct SecureRemotingCertificateValidationResult_tDA0C18B9901F63FBF431595385903B5FB06F7736_marshaled_com
+{
+	int32_t ___TrustedRoot_0;
+	int32_t ___Revoked_1;
+	int32_t ___Expired_2;
+	int32_t ___WrongUsage_3;
+	int32_t ___RevocationCheckFailed_4;
+	int32_t ___InvalidCertOrChain_5;
+	int32_t ___NameValidationResult_6;
+};
+#pragma pack(pop, tp)
+
+// LibVLCSharp.TimePoint
+struct TimePoint_t38813149A00A0400B53D22B4049E8B5898CB5CC6 
+{
+	// System.Double LibVLCSharp.TimePoint::<Position>k__BackingField
+	double ___U3CPositionU3Ek__BackingField_0;
+	// System.Double LibVLCSharp.TimePoint::<Rate>k__BackingField
+	double ___U3CRateU3Ek__BackingField_1;
+	// System.Int64 LibVLCSharp.TimePoint::<Time>k__BackingField
+	int64_t ___U3CTimeU3Ek__BackingField_2;
+	// System.Int64 LibVLCSharp.TimePoint::<Length>k__BackingField
+	int64_t ___U3CLengthU3Ek__BackingField_3;
+	// System.Int64 LibVLCSharp.TimePoint::<SystemDate>k__BackingField
+	int64_t ___U3CSystemDateU3Ek__BackingField_4;
+};
+
+// System.UIntPtr
+struct UIntPtr_t 
+{
+	// System.Void* System.UIntPtr::_pointer
+	void* ____pointer_1;
+};
+
+// UnityEngine.Vector2Int
+struct Vector2Int_t69B2886EBAB732D9B880565E18E7568F3DE0CE6A 
+{
+	// System.Int32 UnityEngine.Vector2Int::m_X
+	int32_t ___m_X_0;
+	// System.Int32 UnityEngine.Vector2Int::m_Y
+	int32_t ___m_Y_1;
+};
+
+// System.Void
+struct Void_t4861ACF8F4594C3437BB48B6E56783494B843915 
+{
+	union
+	{
+		struct
+		{
+		};
+		uint8_t Void_t4861ACF8F4594C3437BB48B6E56783494B843915__padding[1];
+	};
+};
+
+// Mono.Unity.UnityTls/unitytls_x509_ref
+struct unitytls_x509_ref_t9CEB17766B4144117333AB50379B21A357FA4333 
+{
+	// System.UInt64 Mono.Unity.UnityTls/unitytls_x509_ref::handle
+	uint64_t ___handle_0;
+};
+
+// Mono.Unity.UnityTls/unitytls_x509list_ref
+struct unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17 
+{
+	// System.UInt64 Mono.Unity.UnityTls/unitytls_x509list_ref::handle
+	uint64_t ___handle_0;
+};
+
+// UnityEngine.XR.ARSubsystems.XRCpuImage/ConversionParams
+struct ConversionParams_t062706B15E2C508C54473A1FD72013C4381CCB62 
+{
+	// UnityEngine.RectInt UnityEngine.XR.ARSubsystems.XRCpuImage/ConversionParams::m_InputRect
+	RectInt_t1744D10E1063135DA9D574F95205B98DAC600CB8 ___m_InputRect_0;
+	// UnityEngine.Vector2Int UnityEngine.XR.ARSubsystems.XRCpuImage/ConversionParams::m_OutputDimensions
+	Vector2Int_t69B2886EBAB732D9B880565E18E7568F3DE0CE6A ___m_OutputDimensions_1;
+	// UnityEngine.TextureFormat UnityEngine.XR.ARSubsystems.XRCpuImage/ConversionParams::m_Format
+	int32_t ___m_Format_2;
+	// UnityEngine.XR.ARSubsystems.XRCpuImage/Transformation UnityEngine.XR.ARSubsystems.XRCpuImage/ConversionParams::m_Transformation
+	int32_t ___m_Transformation_3;
+};
+
+// System.IntPtr
+struct IntPtr_t_StaticFields
+{
+	// System.IntPtr System.IntPtr::Zero
+	intptr_t ___Zero_1;
+};
+
+// System.IntPtr
+
+// Microsoft.MixedReality.OpenXR.Remoting.SecureRemotingCertificateValidationResult
+
+// Microsoft.MixedReality.OpenXR.Remoting.SecureRemotingCertificateValidationResult
+
+// LibVLCSharp.TimePoint
+
+// LibVLCSharp.TimePoint
+
+// System.UIntPtr
+struct UIntPtr_t_StaticFields
+{
+	// System.UIntPtr System.UIntPtr::Zero
+	uintptr_t ___Zero_0;
+};
+
+// System.UIntPtr
+
+// System.Void
+
+// System.Void
+
+// Mono.Unity.UnityTls/unitytls_x509_ref
+
+// Mono.Unity.UnityTls/unitytls_x509_ref
+
+// Mono.Unity.UnityTls/unitytls_x509list_ref
+
+// Mono.Unity.UnityTls/unitytls_x509list_ref
+
+// UnityEngine.XR.ARSubsystems.XRCpuImage/ConversionParams
+
+// UnityEngine.XR.ARSubsystems.XRCpuImage/ConversionParams
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+
+extern "C" void DEFAULT_CALL ReversePInvokeWrapper_ARCameraBackground_BeforeBackgroundRenderHandler_m3B215B54CFB6F6F00A724D9A6BE66808593ABFCD(int32_t ___0_eventId);
+extern "C" int32_t DEFAULT_CALL ReversePInvokeWrapper_AppRemotingSubsystem_ImplementValidateAuthenticationToken_mFD455DE70BB982F47A6614CCF7EFFE952E11E9E0(char* ___0_authenticationTokenToCheck);
+extern "C" SecureRemotingCertificateValidationResult_tDA0C18B9901F63FBF431595385903B5FB06F7736_marshaled_pinvoke DEFAULT_CALL ReversePInvokeWrapper_AppRemotingSubsystem_ImplementValidateServerCertificate_m9BBEB3EB86689175C979D0386FD9FD65240270D5(char* ___0_hostName, SecureRemotingCertificateValidationResult_tDA0C18B9901F63FBF431595385903B5FB06F7736_marshaled_pinvoke ___1_systemValidationResult);
+extern "C" void DEFAULT_CALL ReversePInvokeWrapper_CultureInfo_OnCultureInfoChangedInAppX_m407BCFC1029A4485B7B063BC2F3601968C3BE577(Il2CppChar* ___0_language);
+extern "C" int32_t CDECL ReversePInvokeWrapper_DeflateStreamNative_UnmanagedRead_m321A2621068F1C9509594A4D8F405F4F12C1CEB3(intptr_t ___0_buffer, int32_t ___1_length, intptr_t ___2_data);
+extern "C" int32_t CDECL ReversePInvokeWrapper_DeflateStreamNative_UnmanagedWrite_mB0AD438266A9DD2813715E8BC90BF07DC7A02F52(intptr_t ___0_buffer, int32_t ___1_length, intptr_t ___2_data);
+extern "C" void CDECL ReversePInvokeWrapper_EventManager_EventCallback_mC09EF64BF9620E97A4ABC1BB2CAB916443B78228(intptr_t ___0_evt, intptr_t ___1_userData);
+extern "C" void CDECL ReversePInvokeWrapper_LibVLC_CancelCallback_mD7A75BACD6E41A02D2A24B140BCE2B277B8271AB(intptr_t ___0_libVLCHandle, intptr_t ___1_dialogId);
+extern "C" void CDECL ReversePInvokeWrapper_LibVLC_DisplayErrorCallback_mCC77CB63F3DD85EBAD18AADE0A879144E8F4135F(intptr_t ___0_libVLCHandle, intptr_t ___1_title, intptr_t ___2_text);
+extern "C" void CDECL ReversePInvokeWrapper_LibVLC_DisplayLoginCallback_m9FD78626D686D70C83B1E2ECF5C08A2D9C597FE2(intptr_t ___0_libVLCHandle, intptr_t ___1_dialogId, intptr_t ___2_title, intptr_t ___3_text, intptr_t ___4_defaultUsername, int32_t ___5_askStore);
+extern "C" void CDECL ReversePInvokeWrapper_LibVLC_DisplayProgressCallback_mF23C89E42933C7DB7EE4A342A5EC743CD2F4BD07(intptr_t ___0_libVLCHandle, intptr_t ___1_dialogId, intptr_t ___2_title, intptr_t ___3_text, int32_t ___4_indeterminate, float ___5_position, intptr_t ___6_cancelText);
+extern "C" void CDECL ReversePInvokeWrapper_LibVLC_DisplayQuestionCallback_m22B60E332850F123AC61FAC9AF6BB986D1FB1E02(intptr_t ___0_libVLCHandle, intptr_t ___1_dialogId, intptr_t ___2_title, intptr_t ___3_text, int32_t ___4_type, intptr_t ___5_cancelText, intptr_t ___6_firstActionText, intptr_t ___7_secondActionText);
+extern "C" void CDECL ReversePInvokeWrapper_LibVLC_ExitCallback_m653ACE53D9529C1F3BAEF9CDF117C0F260E12040(intptr_t ___0_libVLCHandle);
+extern "C" void CDECL ReversePInvokeWrapper_LibVLC_LogCallback_mB82EE5D5BD8A41B9805C07C8BC919BFDF9461E8F(intptr_t ___0_libVLCHandle, int32_t ___1_logLevel, intptr_t ___2_logContext, intptr_t ___3_format, intptr_t ___4_args);
+extern "C" void CDECL ReversePInvokeWrapper_LibVLC_UpdateProgressCallback_mDC9411AD0A5957A42A58DD161BA91CDB0C1A19B4(intptr_t ___0_libVLCHandle, intptr_t ___1_dialogId, float ___2_position, intptr_t ___3_text);
+extern "C" void CDECL ReversePInvokeWrapper_Media_CloseMediaCallback_m8F775FDCC0C3FD8AF25C804E5E63C1FB847D261B(intptr_t ___0_opaque);
+extern "C" int32_t CDECL ReversePInvokeWrapper_Media_OpenMediaCallback_mBAC22092D449ABA953C507E20D08C153D5D9D8FA(intptr_t ___0_opaque, intptr_t* ___1_data, uint64_t* ___2_size);
+extern "C" intptr_t CDECL ReversePInvokeWrapper_Media_ReadMediaCallback_mF49B3DE96927959400B56121E71AA222D6E0B484(intptr_t ___0_opaque, intptr_t ___1_buf, uint32_t ___2_len);
+extern "C" int32_t CDECL ReversePInvokeWrapper_Media_SeekMediaCallback_mA9ECC80166E310C2F0694DAC5702611C117DA7ED(intptr_t ___0_opaque, uint64_t ___1_offset);
+extern "C" void CDECL ReversePInvokeWrapper_MediaPlayer_AudioCleanupCallback_m93ADE0DDC155EE13B991B771284BED54B3F7EDCA(intptr_t ___0_opaque);
+extern "C" void CDECL ReversePInvokeWrapper_MediaPlayer_AudioDrainCallback_m1689F5BDF0B3B9D457E86998CD663E9402A3DDC4(intptr_t ___0_data);
+extern "C" void CDECL ReversePInvokeWrapper_MediaPlayer_AudioFlushCallback_m8BA240D4BE988DAC47FCD8B09ADA58C9EF453ADF(intptr_t ___0_data, int64_t ___1_pts);
+extern "C" void CDECL ReversePInvokeWrapper_MediaPlayer_AudioPauseCallback_m3C69D30D2DAE4AC5E259AE98D12EB71B2FD1C334(intptr_t ___0_data, int64_t ___1_pts);
+extern "C" void CDECL ReversePInvokeWrapper_MediaPlayer_AudioPlayCallback_m20B7B8F689F27D70F96B06BFFB5BEED14FCA1549(intptr_t ___0_data, intptr_t ___1_samples, uint32_t ___2_count, int64_t ___3_pts);
+extern "C" void CDECL ReversePInvokeWrapper_MediaPlayer_AudioResumeCallback_mFBB577B476231BDD59D77705AF0C1607D7B36615(intptr_t ___0_data, int64_t ___1_pts);
+extern "C" int32_t CDECL ReversePInvokeWrapper_MediaPlayer_AudioSetupCallback_mC4CB076ADE5779607001E6CD46D83020DC8270C6(intptr_t* ___0_opaque, intptr_t* ___1_format, uint32_t* ___2_rate, uint32_t* ___3_channels);
+extern "C" void CDECL ReversePInvokeWrapper_MediaPlayer_AudioVolumeCallback_m92F95AC34520E6A35D613BF0EC89D1B8D35465ED(intptr_t ___0_data, float ___1_volume, int8_t ___2_mute);
+extern "C" void CDECL ReversePInvokeWrapper_MediaPlayer_FrameMetadataCallback_m18C44E205BF88D85ACEFEC1F78180611C5C9E207(intptr_t ___0_opaque, int32_t ___1_type, void* ___2_metadata);
+extern "C" intptr_t CDECL ReversePInvokeWrapper_MediaPlayer_GetProcAddressCallback_m53CB37585C1C267CE5FD88DCDFCD649B70FFB59F(intptr_t ___0_opaque, intptr_t ___1_functionName);
+extern "C" int32_t CDECL ReversePInvokeWrapper_MediaPlayer_MakeCurrentCallback_mCF7E10CB91CF415CEA531771EBAFEAF698F9C553(intptr_t ___0_opaque, int32_t ___1_enter);
+extern "C" void CDECL ReversePInvokeWrapper_MediaPlayer_OutputCleanupCallback_mC60B23F54394DEB5D124287CC9D9CAB55565B4C6(intptr_t ___0_opaque);
+extern "C" int32_t CDECL ReversePInvokeWrapper_MediaPlayer_OutputSelectPlaneCallback_mF617E97CBC9675EFB3590C79CB5A09DA7737AAE6(intptr_t ___0_opaque, uintptr_t ___1_plane, void* ___2_output);
+extern "C" void CDECL ReversePInvokeWrapper_MediaPlayer_OutputSetResizeCallback_m12993F9A0AD66100551D0048839ED37C6DA4907B(intptr_t ___0_opaque, Il2CppMethodPointer ___1_report_size_change, intptr_t ___2_report_opaque);
+extern "C" int8_t CDECL ReversePInvokeWrapper_MediaPlayer_OutputSetupCallback_m3BA329F1F5E8343D88B4BB810CFB428328A92B11(intptr_t* ___0_opaque, SetupDeviceConfig_t72B4F51A3027A54D5F9D06F5702598E5747C7209* ___1_config, SetupDeviceInfo_t613AFB288288EC62007E0D1A11FB12757DA6C908* ___2_setup);
+extern "C" void CDECL ReversePInvokeWrapper_MediaPlayer_SwapCallback_mD3608767A3D4D539BDA0EE22B996484F527C33EB(intptr_t ___0_opaque);
+extern "C" int8_t CDECL ReversePInvokeWrapper_MediaPlayer_UpdateOutputCallback_m695F888DCC854615A345BEAF6CF35FE86796C432(intptr_t ___0_opaque, RenderConfig_tEB749A28C75A5B25816D712FBCA1DF82E29F869A* ___1_config, OutputConfig_tF9F7BD2788E96B649291FE4F3B30A754CD426641_marshaled_pinvoke* ___2_output);
+extern "C" void CDECL ReversePInvokeWrapper_MediaPlayer_VideoDisplayCallback_m90CC24A70A153A7DBF455DFCEB6D8B248746B4E0(intptr_t ___0_opaque, intptr_t ___1_picture);
+extern "C" uint32_t CDECL ReversePInvokeWrapper_MediaPlayer_VideoFormatCallback_mA10A8BB54B881869BB51042C08A0A91C1A205B13(intptr_t* ___0_opaque, intptr_t ___1_chroma, uint32_t* ___2_width, uint32_t* ___3_height, uint32_t* ___4_pitches, uint32_t* ___5_lines);
+extern "C" intptr_t CDECL ReversePInvokeWrapper_MediaPlayer_VideoLockCallback_m0AF2AB91AB8BE1F44077569234B2759DC10BF6BF(intptr_t ___0_opaque, intptr_t ___1_planes);
+extern "C" void CDECL ReversePInvokeWrapper_MediaPlayer_VideoUnlockCallback_mAD87EDA62AAC742210C832CC78ED89BBC89E78F1(intptr_t ___0_opaque, intptr_t ___1_picture, intptr_t ___2_planes);
+extern "C" void CDECL ReversePInvokeWrapper_MediaPlayer_WatchTimeOnDiscontinuityCallback_mF2B5E3CAD93BE492ED1157020FF0AF55082A08CA(int64_t ___0_systemDate, void* ___1_opaque);
+extern "C" void CDECL ReversePInvokeWrapper_MediaPlayer_WatchTimeOnUpdateCallback_m4B5C732CD7DB0963A36046BD0B68197560C192FF(TimePoint_t38813149A00A0400B53D22B4049E8B5898CB5CC6 ___0_timepoint, void* ___1_opaque);
+extern "C" void DEFAULT_CALL ReversePInvokeWrapper_MockRuntime_AfterFunctionCallback_mFBBF94D9868CA6870E3A6A78D831145376372D46(char* ___0_function, int32_t ___1_result);
+extern "C" int32_t DEFAULT_CALL ReversePInvokeWrapper_MockRuntime_BeforeFunctionCallback_m70AB6148D0D9FCD315ACDB6B46131514D128380D(char* ___0_function);
+extern "C" void DEFAULT_CALL ReversePInvokeWrapper_MockRuntime_ReceiveScriptEvent_m4A8AAF0A455A02262E3B74CB3DB498A88C84AD14(int32_t ___0_evt, uint64_t ___1_param);
+extern "C" void DEFAULT_CALL ReversePInvokeWrapper_OSSpecificSynchronizationContext_InvocationEntry_mF93C3CF6DBEC86E377576D840CAF517CB6E4D7E3(intptr_t ___0_arg);
+extern "C" void DEFAULT_CALL ReversePInvokeWrapper_OpenXRLoaderBase_ReceiveNativeEvent_m521057A79D56E2995A93CEB8B66A60B4297896F0(int32_t ___0_e, uint64_t ___1_payload);
+extern "C" void CDECL ReversePInvokeWrapper_UnityTlsContext_CertificateCallback_m8CC672A44A8CCFD2A3EB2D9B38A9A134F6EF706B(void* ___0_userData, unitytls_tlsctx_tF8BBCBFE1E957B846442DED65ECB89BC5307DEAE* ___1_ctx, uint8_t* ___2_cn, intptr_t ___3_cnLen, unitytls_x509name_t8A1108C917795D8FE946B50769ACE51489C7BF5D* ___4_caList, intptr_t ___5_caListLen, unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17* ___6_chain, unitytls_key_ref_t6BD91D013DF11047C53738FEEB12CE290FDC71A2* ___7_key, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___8_errorState);
+extern "C" intptr_t CDECL ReversePInvokeWrapper_UnityTlsContext_ReadCallback_m068A7DC153B3D2C4F6922B46BC5957CF33AE3450(void* ___0_userData, uint8_t* ___1_buffer, intptr_t ___2_bufferLen, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___3_errorState);
+extern "C" uint32_t CDECL ReversePInvokeWrapper_UnityTlsContext_VerifyCallback_mC7AE01FAD8A336A6BF11CF8A3EFAC60CF6167E6F(void* ___0_userData, unitytls_x509list_ref_t6C5C1CF0B720516A681CB741104A164FD8B3CF17 ___1_chain, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___2_errorState);
+extern "C" intptr_t CDECL ReversePInvokeWrapper_UnityTlsContext_WriteCallback_m74F83CFEE7D8FB7EBD1A1021DCB8945E89382998(void* ___0_userData, uint8_t* ___1_data, intptr_t ___2_bufferLen, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___3_errorState);
+extern "C" uint32_t CDECL ReversePInvokeWrapper_UnityTlsProvider_x509verify_callback_mB2465D108005179B9873A37C418CD26A37194E3B(void* ___0_userData, unitytls_x509_ref_t9CEB17766B4144117333AB50379B21A357FA4333 ___1_cert, uint32_t ___2_result, unitytls_errorstate_tC926EE4582920BE2C1DB1F3F65619B810D5AB902* ___3_errorState);
+extern "C" void DEFAULT_CALL ReversePInvokeWrapper_XRCpuImage_OnAsyncConversionComplete_mDC3A0C88A34909C9D08E4BE7E94C8E27E2BB3D3C(int32_t ___0_status, ConversionParams_t062706B15E2C508C54473A1FD72013C4381CCB62 ___1_conversionParams, intptr_t ___2_dataPtr, int32_t ___3_dataLength, intptr_t ___4_context);
+
+
+IL2CPP_EXTERN_C const Il2CppMethodPointer g_ReversePInvokeWrapperPointers[];
+const Il2CppMethodPointer g_ReversePInvokeWrapperPointers[53] = 
+{
+	reinterpret_cast<Il2CppMethodPointer>(ReversePInvokeWrapper_ARCameraBackground_BeforeBackgroundRenderHandler_m3B215B54CFB6F6F00A724D9A6BE66808593ABFCD),
+	reinterpret_cast<Il2CppMethodPointer>(ReversePInvokeWrapper_AppRemotingSubsystem_ImplementValidateAuthenticationToken_mFD455DE70BB982F47A6614CCF7EFFE952E11E9E0),
+	reinterpret_cast<Il2CppMethodPointer>(ReversePInvokeWrapper_AppRemotingSubsystem_ImplementValidateServerCertificate_m9BBEB3EB86689175C979D0386FD9FD65240270D5),
+	reinterpret_cast<Il2CppMethodPointer>(ReversePInvokeWrapper_CultureInfo_OnCultureInfoChangedInAppX_m407BCFC1029A4485B7B063BC2F3601968C3BE577),
+	reinterpret_cast<Il2CppMethodPointer>(ReversePInvokeWrapper_DeflateStreamNative_UnmanagedRead_m321A2621068F1C9509594A4D8F405F4F12C1CEB3),
+	reinterpret_cast<Il2CppMethodPointer>(ReversePInvokeWrapper_DeflateStreamNative_UnmanagedWrite_mB0AD438266A9DD2813715E8BC90BF07DC7A02F52),
+	reinterpret_cast<Il2CppMethodPointer>(ReversePInvokeWrapper_EventManager_EventCallback_mC09EF64BF9620E97A4ABC1BB2CAB916443B78228),
+	reinterpret_cast<Il2CppMethodPointer>(ReversePInvokeWrapper_LibVLC_CancelCallback_mD7A75BACD6E41A02D2A24B140BCE2B277B8271AB),
+	reinterpret_cast<Il2CppMethodPointer>(ReversePInvokeWrapper_LibVLC_DisplayErrorCallback_mCC77CB63F3DD85EBAD18AADE0A879144E8F4135F),
+	reinterpret_cast<Il2CppMethodPointer>(ReversePInvokeWrapper_LibVLC_DisplayLoginCallback_m9FD78626D686D70C83B1E2ECF5C08A2D9C597FE2),
+	reinterpret_cast<Il2CppMethodPointer>(ReversePInvokeWrapper_LibVLC_DisplayProgressCallback_mF23C89E42933C7DB7EE4A342A5EC743CD2F4BD07),
+	reinterpret_cast<Il2CppMethodPointer>(ReversePInvokeWrapper_LibVLC_DisplayQuestionCallback_m22B60E332850F123AC61FAC9AF6BB986D1FB1E02),
+	reinterpret_cast<Il2CppMethodPointer>(ReversePInvokeWrapper_LibVLC_ExitCallback_m653ACE53D9529C1F3BAEF9CDF117C0F260E12040),
+	reinterpret_cast<Il2CppMethodPointer>(ReversePInvokeWrapper_LibVLC_LogCallback_mB82EE5D5BD8A41B9805C07C8BC919BFDF9461E8F),
+	reinterpret_cast<Il2CppMethodPointer>(ReversePInvokeWrapper_LibVLC_UpdateProgressCallback_mDC9411AD0A5957A42A58DD161BA91CDB0C1A19B4),
+	reinterpret_cast<Il2CppMethodPointer>(ReversePInvokeWrapper_Media_CloseMediaCallback_m8F775FDCC0C3FD8AF25C804E5E63C1FB847D261B),
+	reinterpret_cast<Il2CppMethodPointer>(ReversePInvokeWrapper_Media_OpenMediaCallback_mBAC22092D449ABA953C507E20D08C153D5D9D8FA),
+	reinterpret_cast<Il2CppMethodPointer>(ReversePInvokeWrapper_Media_ReadMediaCallback_mF49B3DE96927959400B56121E71AA222D6E0B484),
+	reinterpret_cast<Il2CppMethodPointer>(ReversePInvokeWrapper_Media_SeekMediaCallback_mA9ECC80166E310C2F0694DAC5702611C117DA7ED),
+	reinterpret_cast<Il2CppMethodPointer>(ReversePInvokeWrapper_MediaPlayer_AudioCleanupCallback_m93ADE0DDC155EE13B991B771284BED54B3F7EDCA),
+	reinterpret_cast<Il2CppMethodPointer>(ReversePInvokeWrapper_MediaPlayer_AudioDrainCallback_m1689F5BDF0B3B9D457E86998CD663E9402A3DDC4),
+	reinterpret_cast<Il2CppMethodPointer>(ReversePInvokeWrapper_MediaPlayer_AudioFlushCallback_m8BA240D4BE988DAC47FCD8B09ADA58C9EF453ADF),
+	reinterpret_cast<Il2CppMethodPointer>(ReversePInvokeWrapper_MediaPlayer_AudioPauseCallback_m3C69D30D2DAE4AC5E259AE98D12EB71B2FD1C334),
+	reinterpret_cast<Il2CppMethodPointer>(ReversePInvokeWrapper_MediaPlayer_AudioPlayCallback_m20B7B8F689F27D70F96B06BFFB5BEED14FCA1549),
+	reinterpret_cast<Il2CppMethodPointer>(ReversePInvokeWrapper_MediaPlayer_AudioResumeCallback_mFBB577B476231BDD59D77705AF0C1607D7B36615),
+	reinterpret_cast<Il2CppMethodPointer>(ReversePInvokeWrapper_MediaPlayer_AudioSetupCallback_mC4CB076ADE5779607001E6CD46D83020DC8270C6),
+	reinterpret_cast<Il2CppMethodPointer>(ReversePInvokeWrapper_MediaPlayer_AudioVolumeCallback_m92F95AC34520E6A35D613BF0EC89D1B8D35465ED),
+	reinterpret_cast<Il2CppMethodPointer>(ReversePInvokeWrapper_MediaPlayer_FrameMetadataCallback_m18C44E205BF88D85ACEFEC1F78180611C5C9E207),
+	reinterpret_cast<Il2CppMethodPointer>(ReversePInvokeWrapper_MediaPlayer_GetProcAddressCallback_m53CB37585C1C267CE5FD88DCDFCD649B70FFB59F),
+	reinterpret_cast<Il2CppMethodPointer>(ReversePInvokeWrapper_MediaPlayer_MakeCurrentCallback_mCF7E10CB91CF415CEA531771EBAFEAF698F9C553),
+	reinterpret_cast<Il2CppMethodPointer>(ReversePInvokeWrapper_MediaPlayer_OutputCleanupCallback_mC60B23F54394DEB5D124287CC9D9CAB55565B4C6),
+	reinterpret_cast<Il2CppMethodPointer>(ReversePInvokeWrapper_MediaPlayer_OutputSelectPlaneCallback_mF617E97CBC9675EFB3590C79CB5A09DA7737AAE6),
+	reinterpret_cast<Il2CppMethodPointer>(ReversePInvokeWrapper_MediaPlayer_OutputSetResizeCallback_m12993F9A0AD66100551D0048839ED37C6DA4907B),
+	reinterpret_cast<Il2CppMethodPointer>(ReversePInvokeWrapper_MediaPlayer_OutputSetupCallback_m3BA329F1F5E8343D88B4BB810CFB428328A92B11),
+	reinterpret_cast<Il2CppMethodPointer>(ReversePInvokeWrapper_MediaPlayer_SwapCallback_mD3608767A3D4D539BDA0EE22B996484F527C33EB),
+	reinterpret_cast<Il2CppMethodPointer>(ReversePInvokeWrapper_MediaPlayer_UpdateOutputCallback_m695F888DCC854615A345BEAF6CF35FE86796C432),
+	reinterpret_cast<Il2CppMethodPointer>(ReversePInvokeWrapper_MediaPlayer_VideoDisplayCallback_m90CC24A70A153A7DBF455DFCEB6D8B248746B4E0),
+	reinterpret_cast<Il2CppMethodPointer>(ReversePInvokeWrapper_MediaPlayer_VideoFormatCallback_mA10A8BB54B881869BB51042C08A0A91C1A205B13),
+	reinterpret_cast<Il2CppMethodPointer>(ReversePInvokeWrapper_MediaPlayer_VideoLockCallback_m0AF2AB91AB8BE1F44077569234B2759DC10BF6BF),
+	reinterpret_cast<Il2CppMethodPointer>(ReversePInvokeWrapper_MediaPlayer_VideoUnlockCallback_mAD87EDA62AAC742210C832CC78ED89BBC89E78F1),
+	reinterpret_cast<Il2CppMethodPointer>(ReversePInvokeWrapper_MediaPlayer_WatchTimeOnDiscontinuityCallback_mF2B5E3CAD93BE492ED1157020FF0AF55082A08CA),
+	reinterpret_cast<Il2CppMethodPointer>(ReversePInvokeWrapper_MediaPlayer_WatchTimeOnUpdateCallback_m4B5C732CD7DB0963A36046BD0B68197560C192FF),
+	reinterpret_cast<Il2CppMethodPointer>(ReversePInvokeWrapper_MockRuntime_AfterFunctionCallback_mFBBF94D9868CA6870E3A6A78D831145376372D46),
+	reinterpret_cast<Il2CppMethodPointer>(ReversePInvokeWrapper_MockRuntime_BeforeFunctionCallback_m70AB6148D0D9FCD315ACDB6B46131514D128380D),
+	reinterpret_cast<Il2CppMethodPointer>(ReversePInvokeWrapper_MockRuntime_ReceiveScriptEvent_m4A8AAF0A455A02262E3B74CB3DB498A88C84AD14),
+	reinterpret_cast<Il2CppMethodPointer>(ReversePInvokeWrapper_OSSpecificSynchronizationContext_InvocationEntry_mF93C3CF6DBEC86E377576D840CAF517CB6E4D7E3),
+	reinterpret_cast<Il2CppMethodPointer>(ReversePInvokeWrapper_OpenXRLoaderBase_ReceiveNativeEvent_m521057A79D56E2995A93CEB8B66A60B4297896F0),
+	reinterpret_cast<Il2CppMethodPointer>(ReversePInvokeWrapper_UnityTlsContext_CertificateCallback_m8CC672A44A8CCFD2A3EB2D9B38A9A134F6EF706B),
+	reinterpret_cast<Il2CppMethodPointer>(ReversePInvokeWrapper_UnityTlsContext_ReadCallback_m068A7DC153B3D2C4F6922B46BC5957CF33AE3450),
+	reinterpret_cast<Il2CppMethodPointer>(ReversePInvokeWrapper_UnityTlsContext_VerifyCallback_mC7AE01FAD8A336A6BF11CF8A3EFAC60CF6167E6F),
+	reinterpret_cast<Il2CppMethodPointer>(ReversePInvokeWrapper_UnityTlsContext_WriteCallback_m74F83CFEE7D8FB7EBD1A1021DCB8945E89382998),
+	reinterpret_cast<Il2CppMethodPointer>(ReversePInvokeWrapper_UnityTlsProvider_x509verify_callback_mB2465D108005179B9873A37C418CD26A37194E3B),
+	reinterpret_cast<Il2CppMethodPointer>(ReversePInvokeWrapper_XRCpuImage_OnAsyncConversionComplete_mDC3A0C88A34909C9D08E4BE7E94C8E27E2BB3D3C),
+};
