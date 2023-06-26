@@ -1,10 +1,10 @@
+using Microsoft.Maps.Unity;
 using Microsoft.MixedReality.Toolkit;
 using Microsoft.MixedReality.Toolkit.Input;
 using Microsoft.MixedReality.Toolkit.Utilities;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using Microsoft.Maps.Unity;
 
 
 public class DrawNoteCore : MonoBehaviour, IMixedRealityInputHandler
@@ -21,6 +21,8 @@ public class DrawNoteCore : MonoBehaviour, IMixedRealityInputHandler
     private MapRenderer mapRenderer;
 
     private MapInteractionController mapInteractionController;
+
+    // private Component mapInteractionHandlerComponent;
 
 
     public Vector3 offset = new Vector3(0, 0, 0.05f);
@@ -86,9 +88,9 @@ public class DrawNoteCore : MonoBehaviour, IMixedRealityInputHandler
 
     private void Start()
     {
+        Debug.Log(" start() Drawing is " + drawing);
         // map = GameObject.Find("KaartTafel");
         map = GameObject.Find("Map");
-        mapRenderer = map.GetComponent<MapRenderer>();
         mapInteractionController = mapRenderer.GetComponent<MapInteractionController>();
         instanceSmallDrawingHUD.SetColorBlockOptions(colorSwatches);
         instanceSmallDrawingHUD.SetColorSelectedIndicator(drawColor);
@@ -113,9 +115,11 @@ public class DrawNoteCore : MonoBehaviour, IMixedRealityInputHandler
     }
     void Update()
     {
+        Debug.Log("drawing is " + drawing);
+
         CheckControllerPosition();
         HandleDrawing();
-        HandleMapRigidbody();
+        // HandleMapRigidbody();
 
     }
     /// <summary>
@@ -343,6 +347,7 @@ public class DrawNoteCore : MonoBehaviour, IMixedRealityInputHandler
         if (drawing)
         {
             TryDrawNote(curMode);
+            Debug.Log("drawing is true");
         }
         else
         {
@@ -359,40 +364,18 @@ public class DrawNoteCore : MonoBehaviour, IMixedRealityInputHandler
         if (drawing == true) 
         {
             // disable map interaction
-            mapInteractionController.PanInteractionEnabled = false;
-            mapInteractionController.ZoomInteractionEnabled = false;
-            mapInteractionController.RotateInteractionEnabled = false;
-            mapInteractionController.TiltInteractionEnabled = false;
+            mapInteractionController.enabled = false;
+
+            Debug.Log("map interaction disabled");
+        
         }
         else 
         {
-            mapInteractionController.PanInteractionEnabled = true;
-            mapInteractionController.ZoomInteractionEnabled = true;
-            mapInteractionController.RotateInteractionEnabled = true;
-            mapInteractionController.TiltInteractionEnabled = true;
+            mapInteractionController.enabled = true;
+
+            Debug.Log("map interaction enabled");
+
         }
 
-        // remove rigidbody from map GameObject
-        // if (drawing == true && map.GetComponent<Rigidbody>() != null)
-        // {
-        //     Debug.Log("drawing is true and rigidbody is not null");
-        //     Destroy(map.GetComponent<Rigidbody>());
-
-        //     // // disable box collider on map
-        //     // bingMap.GetComponent<BoxCollider>().enabled = false;
-        // }
-
-        // // if drawing is false and map gameobject has no rigidbody, add a rigidbody to the map
-        // if (drawing == false && map.GetComponent<Rigidbody>() == null)
-        // {
-        //     Debug.Log("drawing is false and rigidbody is null");
-        //     // give the map gameobject a rigidbody
-        //    map.gameObject.AddComponent<Rigidbody>();
-
-        //     // // turn gravity off for the map
-        //     // map.GetComponent<Rigidbody>().useGravity = false;
-
-        //     // bingMap.GetComponent<BoxCollider>().enabled = true;
-        // }
     }
 }

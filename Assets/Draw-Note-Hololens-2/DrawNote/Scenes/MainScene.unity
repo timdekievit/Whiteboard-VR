@@ -8921,7 +8921,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d63145daef3d20b4686dec04fcb3884f, type: 3}
+  m_Script: {fileID: 11500000, guid: 5acf201551166804f9aef0f9ac6bd938, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &844000807
@@ -45803,6 +45803,14 @@ PrefabInstance:
     - target: {fileID: 3089226893394533588, guid: 88814bbf42655f440a0a4cf01dafc7db, type: 3}
       propertyPath: m_Name
       value: DrawNote
+      objectReference: {fileID: 0}
+    - target: {fileID: 3089226893394533590, guid: 88814bbf42655f440a0a4cf01dafc7db, type: 3}
+      propertyPath: drawMaterial
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3089226893394533590, guid: 88814bbf42655f440a0a4cf01dafc7db, type: 3}
+      propertyPath: drawNoteTarget
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3089226893394533590, guid: 88814bbf42655f440a0a4cf01dafc7db, type: 3}
       propertyPath: instanceSmallDrawingHUD
