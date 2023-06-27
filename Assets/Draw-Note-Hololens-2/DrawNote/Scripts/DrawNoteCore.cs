@@ -10,18 +10,10 @@ using UnityEngine;
 public class DrawNoteCore : MonoBehaviour, IMixedRealityInputHandler
 {
 
-    // The input action that corresponds to the back trigger
-    public MixedRealityInputAction triggerAction;
-
-    // A flag to indicate if the trigger is pressed
     private bool triggerPressed = false;
     private Vector3 controllerpos;
     private GameObject map;
     private MapInteractionHandler mapInteractionHandler;
-
-    public Vector3 offset = new Vector3(0, 0, 0.05f);
-    // public Vector3 offset = new Vector3(0, 0, 0);
-
 
     // Register for input events
     private void OnEnable()
@@ -76,7 +68,6 @@ public class DrawNoteCore : MonoBehaviour, IMixedRealityInputHandler
     private void Start()
     {
         Debug.Log(" start() Drawing is " + drawing);
-        // map = GameObject.Find("KaartTafel");
         map = GameObject.Find("Map");
         mapInteractionHandler = map.GetComponent<MapInteractionHandler>();
         instanceSmallDrawingHUD.SetColorBlockOptions(colorSwatches);
@@ -350,11 +341,6 @@ public class DrawNoteCore : MonoBehaviour, IMixedRealityInputHandler
 
         if (drawing == true) 
         {
-            // disable map interaction
-            // mapInteractionController.enabled = false;
-            // map.GetComponent<MapInteractionController>().enabled = false;
-
-            // GameObject.Find("Map").GetComponent<MapInteractionHandler>().enabled = false;
             mapInteractionHandler.enabled = false;
 
             Debug.Log("map interaction disabled");
@@ -362,8 +348,6 @@ public class DrawNoteCore : MonoBehaviour, IMixedRealityInputHandler
         }
         else 
         {
-            // mapInteractionController.enabled = true;
-            // map.GetComponent<MapInteractionController>().enabled = true;   
             mapInteractionHandler.enabled = true; 
 
             GameObject.Find("Map").GetComponent<MapInteractionHandler>().enabled = true;
