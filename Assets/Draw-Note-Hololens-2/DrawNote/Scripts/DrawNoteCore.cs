@@ -16,14 +16,8 @@ public class DrawNoteCore : MonoBehaviour, IMixedRealityInputHandler
     // A flag to indicate if the trigger is pressed
     private bool triggerPressed = false;
     private Vector3 controllerpos;
-    private Quaternion controllerRot;
     private GameObject map;
-    private MapRenderer mapRenderer;
-
-    private MapInteractionController mapInteractionController;
-
-    // private Component mapInteractionHandlerComponent;
-
+    private MapInteractionHandler mapInteractionHandler;
 
     public Vector3 offset = new Vector3(0, 0, 0.05f);
     // public Vector3 offset = new Vector3(0, 0, 0);
@@ -70,8 +64,6 @@ public class DrawNoteCore : MonoBehaviour, IMixedRealityInputHandler
     /// </summary>
     public DrawNoteType curMode;
 
-    public DrawNoteType controllerMode = DrawNoteType.Closeby;
-
     private MixedRealityPose pose;
 
     public Material drawMaterial;
@@ -80,18 +72,13 @@ public class DrawNoteCore : MonoBehaviour, IMixedRealityInputHandler
 
     public SmallDrawingHUD instanceSmallDrawingHUD;
 
-    public string Name => throw new NotImplementedException();
-
-    public uint Priority => throw new NotImplementedException();
-
-    public BaseMixedRealityProfile ConfigurationProfile => throw new NotImplementedException();
 
     private void Start()
     {
         Debug.Log(" start() Drawing is " + drawing);
         // map = GameObject.Find("KaartTafel");
         map = GameObject.Find("Map");
-        mapInteractionController = mapRenderer.GetComponent<MapInteractionController>();
+        mapInteractionHandler = map.GetComponent<MapInteractionHandler>();
         instanceSmallDrawingHUD.SetColorBlockOptions(colorSwatches);
         instanceSmallDrawingHUD.SetColorSelectedIndicator(drawColor);
         instanceSmallDrawingHUD.SetVisibility(drawing, true);
@@ -119,7 +106,7 @@ public class DrawNoteCore : MonoBehaviour, IMixedRealityInputHandler
 
         CheckControllerPosition();
         HandleDrawing();
-        // HandleMapRigidbody();
+        HandleMapInteractability();
 
     }
     /// <summary>
@@ -358,20 +345,28 @@ public class DrawNoteCore : MonoBehaviour, IMixedRealityInputHandler
         }
     }
 
-    private void HandleMapRigidbody()
+    private void HandleMapInteractability()
     {
 
         if (drawing == true) 
         {
             // disable map interaction
-            mapInteractionController.enabled = false;
+            // mapInteractionController.enabled = false;
+            // map.GetComponent<MapInteractionController>().enabled = false;
+
+            // GameObject.Find("Map").GetComponent<MapInteractionHandler>().enabled = false;
+            mapInteractionHandler.enabled = false;
 
             Debug.Log("map interaction disabled");
         
         }
         else 
         {
-            mapInteractionController.enabled = true;
+            // mapInteractionController.enabled = true;
+            // map.GetComponent<MapInteractionController>().enabled = true;   
+            mapInteractionHandler.enabled = true; 
+
+            GameObject.Find("Map").GetComponent<MapInteractionHandler>().enabled = true;
 
             Debug.Log("map interaction enabled");
 
